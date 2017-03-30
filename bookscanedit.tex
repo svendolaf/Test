@@ -1,0 +1,41 @@
+% Scanned pages from book is expected to be in file bookscan.pdf.
+% Two book pages in each scan, with the bottom of the book pages in the
+% right side of the scanning.
+% We want to edit this to one page on each A4 sheet.
+
+\documentclass[12pt]{article} % use larger type; default would be 10pt
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pdfpages}
+\usepackage[english]{babel}
+
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{top=0mm, bottom=0mm, left=0mm, right=0mm}
+
+
+\begin{document}
+
+
+\def\filename{bookscan.pdf}
+
+%trim=left bottom right top, clip
+% ie. top left bottom right, clip
+
+% The trim values should be adjusted.
+% If the pages are not vertical, the angles for left and right page can be adjusted.
+
+\def\rightpage #1{\includepdf[noautoscale, scale=1.25, pages=#1, angle=270,
+trim = 4mm 152mm 6mm 10mm, clip]{\filename}}
+
+\def\leftpage #1{\includepdf[noautoscale, scale=1.25, pages=#1, angle=270,
+trim = 4mm 0mm 4mm 166mm, clip]{\filename}}
+
+\rightpage 1
+
+\def\mypage{2} \leftpage \mypage \rightpage \mypage
+\def\mypage{3} \leftpage \mypage \rightpage \mypage
+
+\end{document} 
+
+	
