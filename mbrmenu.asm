@@ -11,13 +11,13 @@
 ; the skills to recover from errors you may make.
 ;
 ; This version was made to match a previous MASM version.
-; Som commands however assemble to different encodings using NASM compared
+; Some commands however assemble to different encodings using NASM compared
 ; to MASM, for example "or eax, eax". 
 ;
 ; Written by Svend Olaf Mikkelsen.
 ; SHA1 of program: affe70bd2248d8bc3abfa4d2b4c7446d10f33403
 ; Verify that the SHA1 hash is correct before installing.
-; Date of this source code version: April 15, 2017.
+; Date of this source code version: April 16, 2017.
 ;
 ; The boot manager boots the active partition. If key 1, 2, 3 or 4 is pressed
 ; when a number sign prompt # is printed to the screen, the active partition is
@@ -48,14 +48,12 @@ struc mbr
     .signature       resb 2
 endstruc
 
-    ; cs start       7900h       0h
-    ; code location  7A00h     100h
-    ; data location  7B00h     200h
-    ; active sector  7C00h     300h
-    ; program cs:    8000h     700h
-    ; program code   8100h     800h
-    ; data           8300h     A00h
-
+    ; cs start       7900h       0h     0   256
+    ; code location  7A00h     100h   256   348
+    ; data location  7B5Ch     25Ch   604   164
+    ; active sector  7C00h     300h   768  2478
+    ; MBR copy       85AEh    0CAEh  3246   512
+    ; remaining bss  87AEh    0EAEh  3758
 
 section .text
 
@@ -274,6 +272,7 @@ errorinvalid:   db 'Invalid table', 13, 10, 0
 errorload:      db 'Error loading OS', 13, 10, 0
 errorsig:       db 'Missing OS', 13, 10, 0
 prompt:         db  '#',0
+
 
 section .bss
 
