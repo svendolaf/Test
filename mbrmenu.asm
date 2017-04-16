@@ -1,4 +1,4 @@
-; Boot mananager for x86, which resides entirely in the MBR.
+; Boot manager for x86, which resides entirely in the MBR.
 ;
 ; To assemble:
 ; nasm mbrmenu.asm
@@ -17,7 +17,7 @@
 ; Written by Svend Olaf Mikkelsen.
 ; SHA1 of program: affe70bd2248d8bc3abfa4d2b4c7446d10f33403
 ; Verify that the SHA1 hash is correct before installing.
-; Date of this source code version: April 16, 2017.
+; Date of this source code version: April 17, 2017.
 ;
 ; The boot manager boots the active partition. If key 1, 2, 3 or 4 is pressed
 ; when a number sign prompt # is printed to the screen, the active partition is
