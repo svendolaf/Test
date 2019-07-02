@@ -1,0 +1,58 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{a4paper}
+\geometry{margin=2cm}
+\usepackage{graphicx}
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{paralist}
+\usepackage{verbatim}
+\usepackage{subfig}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{sectsty}
+\usepackage[nottoc,notlof,notlot]{tocbibind}
+\usepackage[titles,subfigure]{tocloft}
+\usepackage{datetime}
+
+\usepackage{mathptmx}
+\usepackage[danish]{babel}
+\usepackage{parskip}
+\usepackage{lipsum}
+\usepackage{kantlipsum}
+\usepackage{fancyhdr}
+\usepackage{mathptmx}
+
+
+\lhead{\bf{Mine noters titel}}
+\chead{}
+\rhead{\thepage}
+\lfoot{Svend Olaf Mikkelsen}
+\cfoot{Mit Firma}
+\rfoot{\today \quad \currenttime}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\sectionfont{\fontsize{12}{12}\selectfont}
+\subsectionfont{\fontsize{12}{12}\selectfont}
+
+\begin{document}
+
+
+\section{Mit første afsnit}
+
+\lipsum[1-4]
+\subsection{Underafsnit}
+\lipsum[1-1]
+\section{Andet afsnit}
+
+
+\kant[1-2]
+\end{document}
